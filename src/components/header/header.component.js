@@ -6,19 +6,22 @@ import {
     HTabs,
     HTab,
     Contact,
-    UnOrderList
+    UnOrderList,
+    MList
 } from "./header.styles";
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HelpIcon from '@mui/icons-material/Help';
+import { List } from "@mui/material";
+
 
 const HeaderComponent = () => {
     return (
         <RootContainer maxWidth="xl">
-            <NavContainer fixed>
-                <HDFClogo></HDFClogo>
+            <NavContainer fixed>  
                 <HTabs>
-                    <HTab label="Personal" />
+                <HDFClogo></HDFClogo>
+                    <HTab label="Personal"/>
                     <HTab label="NRI" />
                     <HTab label="SME" />
                     <HTab label="Wholesale" />
@@ -26,10 +29,10 @@ const HeaderComponent = () => {
                 </HTabs>
                 <Contact>
                    <UnOrderList>
-                        <li><LocationOnIcon /></li>
-                        <li>Locate us</li>
-                        <li><HelpIcon /></li>
-                        <li>Help</li>
+                        <MList><LocationOnIcon sx={{width:18,height:18}}/></MList>
+                        <MList >Locate us</MList>
+                        <MList ><HelpIcon /></MList>
+                        <MList >Help</MList>
                    </UnOrderList>
                 </Contact>
             </NavContainer>
