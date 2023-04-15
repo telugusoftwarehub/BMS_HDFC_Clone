@@ -1,21 +1,15 @@
-// import React from 'react'
-
-// const FormComponent = () => {
-//   return (
-//     <div>FormComponent</div>
-//   )
-// }
-
-// export default FormComponent;
-
-import * as React from "react";
+import React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
+// import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "../button";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import {HMenuItem,HSelect,HForm }from './form.styles'
+import { Typography } from "@mui/material";
 
-export default function FormComponent() {
+
+const FormComponent = () => {
   const [age, setAge] = React.useState("");
   const [demo, setDemo] = React.useState("");
 
@@ -27,54 +21,68 @@ export default function FormComponent() {
   };
 
   return (
-      <FormControl sx={{ m: 1, minWidth: 200}} size="small">
-        <InputLabel id="demo-select-small"></InputLabel>
-        <Select
+      <HForm sx={{p:1,minWidth: 200}} size="small">
+        {/* <InputLabel id="demo-select-small"></InputLabel> */}
+        <div>
+        <Typography>
+        Personal Banking Services
+        </Typography>
+        <Typography fontWeight={600} color={'#444'}>
+          What Are You Looking For?
+        </Typography>
+        </div>
+       
+        <HSelect
           labelId="demo-select-small"
           id="demo-select-small"
           value={age}
           label="Age"
+          input={<OutlinedInput />}
           onChange={handleChange}
           sx={{ marginBottom: 1 }}
         >
-          <MenuItem value="">
+          <HMenuItem value="">
             <em>Select Product Type</em>
-          </MenuItem>
-          <MenuItem value={10}>Cards</MenuItem>
-          <MenuItem value={20}>Accounts</MenuItem>
-          <MenuItem value={30}>Deposits</MenuItem>
-        </Select>
-        <InputLabel id="demo-select-small"></InputLabel>
-        <Select
+          </HMenuItem>
+          <HMenuItem value={10}>Cards</HMenuItem>
+          <HMenuItem value={20}>Accounts</HMenuItem>
+          <HMenuItem value={30}>Deposits</HMenuItem>
+        </HSelect>
+        {/* <InputLabel id="demo-select-small"></InputLabel> */}
+        <HSelect
           labelId="demo-select-small"
           id="demo-select-small"
           value={demo}
           label="Age"
+          input={<OutlinedInput />}
           onChange={handleChangeDemo}
           sx={{ marginBottom: 1 }}
         >
-          <MenuItem value="">
+          <HMenuItem value="">
             <em>Select Product Type</em>
-          </MenuItem>
-          <MenuItem value={10}>CreditCards</MenuItem>
-          <MenuItem value={20}>DebitCards</MenuItem>
-          <MenuItem value={30}>CommercialCards</MenuItem>
-        </Select>
+          </HMenuItem>
+          <HMenuItem value={10}>CreditCards</HMenuItem>
+          <HMenuItem value={20}>DebitCards</HMenuItem>
+          <HMenuItem value={30}>CommercialCards</HMenuItem>
+        </HSelect>
 
         <Button
           buttonVariant="contained"
           ButtonSize="large"
           buttonText="APPLY ONLINE"
-          buttonDisabled="true"
+          // buttonDisabled="false"
           ButtonFullWidth="true"
         />
         <Button
           buttonVariant="text"
           ButtonSize="large"
           buttonText="know more"
-          buttonDisabled="true"
+          // buttonDisabled="false"
           ButtonFullWidth="true"
         />
-      </FormControl>
+
+      </HForm>
   );
-}
+};
+
+export default FormComponent;

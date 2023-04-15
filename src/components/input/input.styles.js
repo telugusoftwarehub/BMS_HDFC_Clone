@@ -2,7 +2,8 @@ import { Container,Paper, InputBase, IconButton, styled} from '@mui/material';
 
 export const RootContainer = styled(Container)`
   min-height: 49px;
-  padding-top: 8px;
+  padding:10px 0 10px 0;
+  
 
 `
 export const NavContainer = styled(Container)`
@@ -19,7 +20,8 @@ export const PaperContainer = styled(Paper)`
   align-items: center;
   width: 617px;
   height: 36px;
-`
+  border: 1px solid #dedede;
+  `
 export const IBase = styled(InputBase)`
   flex: 1;
   margin-left: 8px;
